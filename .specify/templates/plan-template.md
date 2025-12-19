@@ -31,7 +31,15 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+Based on the Physical AI and Humanoid Robotics Book Constitution:
+- Technical accuracy must be grounded in authoritative sources and research
+- All content follows spec-driven development methodology using Spec-Kit Plus
+- Content must be designed for technical audiences with appropriate depth
+- Traceability maintained between book content, specifications, and chatbot responses
+- Modularity achieved while keeping components synchronized
+- Documentation-first approach followed for all components
+- All factual claims must be verifiable against authoritative sources
+- Chatbot responses must be grounded in indexed book content
 
 ## Project Structure
 

@@ -1,55 +1,55 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 1.0.0 → 1.1.0
+Modified principles: None (new constitution created)
+Added sections: All principles reflecting Physical AI and Humanoid Robotics Book project
+Removed sections: Template placeholders
+Templates requiring updates: N/A (initial constitution)
+Follow-up TODOs: None
+-->
+
+# Physical AI and Humanoid Robotics Book Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Technical Accuracy and Research Grounding
+Technical content must be grounded in robotics, AI, and embodied intelligence research with verifiable sources; All factual claims require authoritative backing; Distinction maintained between theory, implementation, and speculation.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Spec-Driven Development with Spec-Kit Plus
+All content and system components follow spec-driven development methodology using Spec-Kit Plus; All deliverables begin with clear specifications before implementation; Traceability maintained between requirements, implementation, and verification.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Clarity for Technical Audiences
+Content designed for technical audiences with AI, robotics, and software engineering backgrounds; Complex concepts explained with appropriate depth and precision; Clear code examples and architectures that are reproducible and well-documented.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Content-System Traceability
+Full traceability maintained between book content, specifications, and chatbot responses; Changes in one component are reflected appropriately in others; Synchronization mechanisms ensure consistency across all system parts.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Modularity with Synchronized Components
+Book chapters, specifications, and chatbot knowledge remain decoupled yet synchronized; Modular design enables independent evolution of components while maintaining coherence; System interfaces clearly defined to support modularity.
 
-### [PRINCIPLE_6_NAME]
+### VI. Documentation-First Approach
+Documentation created before implementation for both book content and system design; All components must have clear, comprehensive documentation; Content and system documentation serve as primary sources of truth.
 
+## Content Standards and Constraints
 
-[PRINCIPLE__DESCRIPTION]
+- All factual and technical claims must be verifiable against authoritative sources
+- Platform: Docusaurus-based technical book with integrated RAG chatbot, deployed via GitHub Pages
+- Chatbot answers must be grounded strictly in indexed book content or user-selected text
+- Reproducible examples with clear setup and execution instructions
+- Clear distinction between proven technology and emerging research areas
+- Accessibility considerations for technical readers with diverse backgrounds
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow and Quality Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Technical accuracy verified through authoritative sources and peer review
+- Content undergoes technical review by subject matter experts
+- System components tested for accuracy and relevance to book content
+- Continuous integration ensures content integrity and system functionality
+- Regular audits verify alignment between book content and chatbot knowledge base
+- Version control maintains history of content changes and their rationale
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution governs all aspects of the Physical AI and Humanoid Robotics Book project. All contributions must comply with these principles. Changes to this constitution require explicit approval and documentation of the rationale. All pull requests and reviews must verify constitutional compliance before merging.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.1.0 | **Ratified**: 2025-06-13 | **Last Amended**: 2025-12-19
