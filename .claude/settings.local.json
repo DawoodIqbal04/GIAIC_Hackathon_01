@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p specs/1-physical-ai-book)",
+      "Bash(sort -t- -k1,1n)"
+    ]
+  }
+}
