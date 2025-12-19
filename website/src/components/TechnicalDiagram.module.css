@@ -1,0 +1,19 @@
+/* Styles for the Technical Diagram component */
+.technicalDiagram {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.diagramImage {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.diagramCaption {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}

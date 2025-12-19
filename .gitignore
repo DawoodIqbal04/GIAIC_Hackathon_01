@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+
+# Docusaurus build outputs
+.build/
+dist/
+out/
+
+# Docusaurus temp files
+.temp/
+.cache/
+
+# Environment variables
+.env*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+build/
+coverage/
+.nyc_output/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Testing
+coverage/
+lib-cov/
+
+# Temporary folders
+tmp/
+temp/
+
+# npm
+npm-debug.log*
+node_modules/
+jspm_packages/
+
+# Yarn
+yarn-error.log*
+.yarn-cache
+.yarn-integrity
+.yarn-metadata.json
+.yarnrc.yml
+.yarn/
+
+# Docusaurus specific
+docusaurus.config.js.bak
