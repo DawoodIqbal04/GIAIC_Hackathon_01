@@ -16,11 +16,11 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <div className={`${styles.buttons}`}>
           <Link
-            className="button button--secondary button--lg"
+            className={`button button--secondary button--lg, ${styles.linkButtons}`}
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            Start Reading Book
           </Link>
         </div>
       </div>
@@ -35,9 +35,7 @@ export default function Home() {
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      
     </Layout>
   );
 }
