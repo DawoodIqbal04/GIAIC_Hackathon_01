@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px sans-serif; fill: #333; }
+    .subtitle { font: 18px sans-serif; fill: #666; }
+    .box { fill: #e8f5e9; stroke: #2e7d32; stroke-width: 2; rx: 10; ry: 10; }
+    .process { fill: #fff3e0; stroke: #ef6c00; stroke-width: 2; rx: 10; ry: 10; }
+    .data { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: #555; stroke-width: 2; marker-end: url(#arrowhead); }
+    .label { font: 14px sans-serif; fill: #333; text-anchor: middle; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555" />
+    </marker>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  
+  <text x="400" y="40" class="title">Perception Network Flow</text>
+  <text x="400" y="70" class="subtitle">Data Processing in AI Perception Systems</text>
+  
+  <!-- Input Data -->
+  <rect x="50" y="100" width="120" height="60" class="data"/>
+  <text x="110" y="135" class="label">Raw Sensor</text>
+  <text x="110" y="155" class="label">Data</text>
+  
+  <!-- Preprocessing -->
+  <rect x="220" y="100" width="120" height="60" class="process"/>
+  <text x="280" y="135" class="label">Pre-</text>
+  <text x="280" y="155" class="label">processing</text>
+  
+  <!-- Feature Extraction -->
+  <rect x="390" y="100" width="120" height="60" class="process"/>
+  <text x="450" y="125" class="label">Feature</text>
+  <text x="450" y="145" class="label">Extraction</text>
+  <text x="450" y="165" class="label">(CNN)</text>
+  
+  <!-- Object Detection -->
+  <rect x="560" y="100" width="120" height="60" class="process"/>
+  <text x="620" y="125" class="label">Object</text>
+  <text x="620" y="145" class="label">Detection</text>
+  <text x="620" y="165" class="label">(YOLO/Detic)</text>
+  
+  <!-- Semantic Segmentation -->
+  <rect x="220" y="220" width="120" height="60" class="process"/>
+  <text x="280" y="245" class="label">Semantic</text>
+  <text x="280" y="265" class="label">Segmentation</text>
+  
+  <!-- Depth Estimation -->
+  <rect x="390" y="220" width="120" height="60" class="process"/>
+  <text x="450" y="245" class="label">Depth</text>
+  <text x="450" y="265" class="label">Estimation</text>
+  
+  <!-- Pose Estimation -->
+  <rect x="560" y="220" width="120" height="60" class="process"/>
+  <text x="620" y="245" class="label">Pose</text>
+  <text x="620" y="265" class="label">Estimation</text>
+  
+  <!-- Fusion -->
+  <rect x="390" y="340" width="120" height="60" class="process"/>
+  <text x="450" y="365" class="label">Sensor</text>
+  <text x="450" y="385" class="label">Fusion</text>
+  
+  <!-- Output -->
+  <rect x="390" y="460" width="120" height="60" class="data"/>
+  <text x="450" y="485" class="label">Perception</text>
+  <text x="450" y="505" class="label">Output</text>
+  
+  <!-- Connections -->
+  <line x1="170" y1="130" x2="220" y2="130" class="arrow"/>
+  <line x1="340" y1="130" x2="390" y2="130" class="arrow"/>
+  <line x1="510" y1="130" x2="560" y2="130" class="arrow"/>
+  <line x1="280" y1="160" x2="280" y2="220" class="arrow"/>
+  <line x1="450" y1="160" x2="450" y2="220" class="arrow"/>
+  <line x1="620" y1="160" x2="620" y2="220" class="arrow"/>
+  <line x1="280" y1="280" x2="450" y2="340" class="arrow"/>
+  <line x1="450" y1="280" x2="450" y2="340" class="arrow"/>
+  <line x1="620" y1="280" x2="450" y2="340" class="arrow"/>
+  <line x1="450" y1="400" x2="450" y2="460" class="arrow"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="530" width="700" height="60" fill="none" stroke="#ccc" stroke-width="1"/>
+  <text x="60" y="550" font-size="14" fill="#333">Legend:</text>
+  <rect x="140" y="538" width="20" height="15" class="process"/>
+  <text x="170" y="550" font-size="12" fill="#333">Processing Unit</text>
+  <rect x="280" y="538" width="20" height="15" class="data"/>
+  <text x="310" y="550" font-size="12" fill="#333">Data</text>
+  <line x1="400" y1="548" x2="410" y2="548" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="430" y="550" font-size="12" fill="#333">Data Flow</text>
+</svg>
