@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-username.github.io',
+  url: 'https://ai-humanoid-robotics-book.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/physical-ai-book/',
@@ -96,7 +96,7 @@ const config = {
             label: 'Book',
           },
           {
-            href: 'https://github.com/your-username/physical-ai-book',
+            href: 'https://github.com/DawoodIqbal04/GIAIC_Hackathon_01',
             label: 'GitHub',
             position: 'right',
           },
@@ -110,19 +110,19 @@ const config = {
             items: [
               {
                 label: 'Module 1: ROS 2 Foundations',
-                to: '/docs/module-1-ros-foundations/intro',
+                to: '/docs/module-1-ros-foundations/module-1-intro',
               },
               {
                 label: 'Module 2: Digital Twins',
-                to: '/docs/module-2-digital-twins/intro',
+                to: '/docs/module-2-digital-twins/module-2-intro',
               },
               {
                 label: 'Module 3: AI Navigation',
-                to: '/docs/module-3-ai-navigation/intro',
+                to: '/docs/module-3-ai-navigation/module-3-intro',
               },
               {
                 label: 'Module 4: VLA Systems',
-                to: '/docs/module-4-vla-systems/intro',
+                to: '/docs/module-4-vla-systems/module-4-intro',
               },
             ],
           },
@@ -144,12 +144,12 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/your-username/physical-ai-book',
+                href: 'https://github.com/DawoodIqbal04/GIAIC_Hackathon_01',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Physical AI and Humanoid Robotics Book. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI and Humanoid Robotics Book. Built with SpecKit-Plus and Qwen-Code By Muhammad Dawood Iqbal.`,
       },
       prism: {
         theme: prismThemes.github,

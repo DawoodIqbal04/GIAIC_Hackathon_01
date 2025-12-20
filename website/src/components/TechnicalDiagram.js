@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './TechnicalDiagram.module.css';
 
 // Technical Diagram Component for displaying technical diagrams in the book
