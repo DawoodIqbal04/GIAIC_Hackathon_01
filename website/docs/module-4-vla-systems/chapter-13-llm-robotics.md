@@ -70,6 +70,8 @@ LLMs bring new capabilities to robotics:
 
 ## LLM-Robot Integration Architectures
 
+![LLM Integration with ROS Architecture](/img/llm-ros-integration.svg)
+
 ### 1. Command Translation Architecture
 
 The simplest integration involves using LLMs to translate natural language commands into robot actions:
@@ -104,12 +106,12 @@ class LLMTaskPlanner:
         Each action should be a simple command.
         Respond with a numbered list of actions.
         """
-        
+
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
-        
+
         # Parse the response into action sequence
         return self.parse_actions(response.choices[0].message.content)
 

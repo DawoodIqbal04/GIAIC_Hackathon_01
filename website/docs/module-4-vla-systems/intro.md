@@ -50,6 +50,8 @@ This module consists of four chapters that build toward the capstone:
 
 ## Vision-Language-Action Systems
 
+![VLA System Architecture](/img/vla-system-architecture.svg)
+
 Vision-Language-Action (VLA) systems represent a paradigm shift in robotics, where robots can understand natural language commands, perceive their environment, and execute complex action sequences. These systems combine:
 
 - **Vision**: Environmental perception and object recognition

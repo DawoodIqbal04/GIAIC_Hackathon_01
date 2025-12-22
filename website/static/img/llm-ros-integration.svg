@@ -1,0 +1,116 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#212529" font-weight="bold">LLM Integration with ROS Architecture</text>
+
+  <!-- LLM Service Block -->
+  <g transform="translate(100, 100)">
+    <rect width="200" height="200" rx="15" ry="15" fill="#d1ecf1" stroke="#0c5460" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#062c33" font-weight="bold">Large Language Model</text>
+    
+    <!-- LLM Types -->
+    <rect x="20" y="45" width="160" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="63" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">GPT-4, Claude, Llama, etc.</text>
+    
+    <!-- Prompt Engineering -->
+    <rect x="20" y="80" width="160" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Prompt Engineering</text>
+    
+    <!-- Response Processing -->
+    <rect x="20" y="115" width="160" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="133" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Response Processing</text>
+    
+    <!-- Action Parsing -->
+    <rect x="20" y="150" width="160" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="168" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Action Parsing</text>
+  </g>
+
+  <!-- ROS Bridge Block -->
+  <g transform="translate(340, 100)">
+    <rect width="200" height="200" rx="15" ry="15" fill="#f8d7da" stroke="#721c24" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#491217" font-weight="bold">ROS Bridge Layer</text>
+    
+    <!-- rclpy/rclcpp -->
+    <rect x="20" y="45" width="160" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="100" y="63" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">rclpy/rclcpp</text>
+    
+    <!-- Message Conversion -->
+    <rect x="20" y="80" width="160" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="100" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Message Conversion</text>
+    
+    <!-- Topic/Service/Action -->
+    <rect x="20" y="115" width="160" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="100" y="133" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Topic/Service/Action</text>
+    
+    <!-- Validation -->
+    <rect x="20" y="150" width="160" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="100" y="168" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Safety Validation</text>
+  </g>
+
+  <!-- Robot Control Block -->
+  <g transform="translate(580, 100)">
+    <rect width="160" height="200" rx="15" ry="15" fill="#d4edda" stroke="#155724" stroke-width="2"/>
+    <text x="80" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#0b2e13" font-weight="bold">Robot Control</text>
+    
+    <!-- Navigation -->
+    <rect x="10" y="45" width="140" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="80" y="63" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Navigation</text>
+    
+    <!-- Manipulation -->
+    <rect x="10" y="80" width="140" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="80" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Manipulation</text>
+    
+    <!-- Locomotion -->
+    <rect x="10" y="115" width="140" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="80" y="133" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Locomotion</text>
+    
+    <!-- Sensors -->
+    <rect x="10" y="150" width="140" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="80" y="168" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Sensors</text>
+  </g>
+
+  <!-- User Interaction Block -->
+  <g transform="translate(100, 320)">
+    <rect width="200" height="120" rx="15" ry="15" fill="#fff3cd" stroke="#856404" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" text-anchor="middle" fill="#533f03" font-weight="bold">User Interaction</text>
+    
+    <!-- Voice Input -->
+    <rect x="20" y="45" width="160" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="63" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Voice Input</text>
+    
+    <!-- Text Input -->
+    <rect x="20" y="75" width="160" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="93" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Text Input</text>
+  </g>
+
+  <!-- Communication Flow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#495057" />
+    </marker>
+  </defs>
+
+  <!-- User to LLM -->
+  <line x1="200" y1="360" x2="200" y2="250" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="210" y="300" font-family="Arial" font-size="12" fill="#495057">Commands</text>
+
+  <!-- LLM to ROS Bridge -->
+  <line x1="300" y1="175" x2="340" y2="175" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="310" y="160" font-family="Arial" font-size="12" fill="#495057">Parsed Actions</text>
+
+  <!-- ROS Bridge to Robot -->
+  <line x1="540" y1="175" x2="580" y2="175" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="550" y="160" font-family="Arial" font-size="12" fill="#495057">ROS Commands</text>
+
+  <!-- Feedback Loop -->
+  <line x1="660" y1="250" x2="660" y2="350" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="670" y="300" font-family="Arial" font-size="12" fill="#6c757d">Feedback</text>
+
+  <!-- Legend -->
+  <rect x="20" y="430" width="760" height="50" fill="#fff" stroke="#dee2e6"/>
+  <text x="40" y="450" font-family="Arial" font-size="12" fill="#495057" font-weight="bold">LLM-ROS Integration:</text>
+  <text x="40" y="468" font-family="Arial" font-size="11" fill="#495057">Natural language commands processed by LLMs translated to ROS actions for robot execution</text>
+</svg>

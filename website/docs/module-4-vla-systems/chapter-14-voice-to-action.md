@@ -62,6 +62,8 @@ For humanoid robots, Whisper provides:
 
 ## Voice-to-Action Architecture
 
+![Cognitive Planning Process: Natural Language to ROS Action Sequences](/img/cognitive-planning-process.svg)
+
 ### Basic Architecture
 
 The voice-to-action system typically follows this flow:

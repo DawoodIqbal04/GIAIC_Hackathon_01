@@ -48,6 +48,8 @@ This project represents the culmination of your learning journey and demonstrate
 
 ## Project Overview
 
+![Capstone Project: Autonomous Humanoid Robot](/img/capstone-autonomous-humanoid.svg)
+
 ### The Autonomous Humanoid System
 
 Our capstone project will implement an autonomous humanoid robot with the following capabilities:

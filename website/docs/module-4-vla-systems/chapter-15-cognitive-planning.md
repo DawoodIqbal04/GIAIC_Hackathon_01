@@ -48,6 +48,8 @@ Cognitive planning systems must handle several key challenges:
 
 ## Cognitive Planning Architecture
 
+![Cognitive Planning Process: Natural Language to ROS Action Sequences](/img/cognitive-planning-process.svg)
+
 ### High-Level Architecture
 
 The cognitive planning system typically consists of several interconnected components:

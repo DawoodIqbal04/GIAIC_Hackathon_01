@@ -97,10 +97,10 @@ This document decomposes the Docusaurus book creation process into clear, action
 - [X] T026 [US2] Create Chapter 14 content: "Voice-to-action using OpenAI Whisper" in docs/module-4-vla-systems/chapter-14-voice-to-action.md
 - [X] T027 [US2] Create Chapter 15 content: "Cognitive planning: Translating natural language into ROS 2 action sequences" in docs/module-4-vla-systems/chapter-15-cognitive-planning.md
 - [X] T028 [US2] Create Chapter 16 content: "Capstone project – The Autonomous Humanoid" in docs/module-4-vla-systems/chapter-16-autonomous-humanoid.md
-- [ ] T029 [US2] Add technical diagrams for VLA system concepts
-- [ ] T030 [US2] Include code examples for LLM integration with ROS
-- [ ] T031 [US2] Add comprehensive capstone project with implementation steps
-- [ ] T032 [US2] Validate Module 4 content technical accuracy with subject matter expert
+- [X] T029 [US2] Add technical diagrams for VLA system concepts
+- [X] T030 [US2] Include code examples for LLM integration with ROS
+- [X] T031 [US2] Add comprehensive capstone project with implementation steps
+- [X] T032 [US2] Validate Module 4 content technical accuracy with subject matter expert
 
 ---
 

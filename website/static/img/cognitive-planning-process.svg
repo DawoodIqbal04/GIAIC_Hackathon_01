@@ -1,0 +1,185 @@
+<svg width="900" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#212529" font-weight="bold">Cognitive Planning: Natural Language to ROS Action Sequences</text>
+
+  <!-- Natural Language Input -->
+  <g transform="translate(50, 100)">
+    <rect width="200" height="100" rx="10" ry="10" fill="#d1ecf1" stroke="#0c5460" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#062c33" font-weight="bold">Natural Language Input</text>
+    
+    <!-- Examples -->
+    <text x="100" y="50" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">"Go to the kitchen and bring me water"</text>
+    <text x="100" y="70" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">"Navigate to the red cube and pick it up"</text>
+    <text x="100" y="90" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">"Walk to the door and open it"</text>
+  </g>
+
+  <!-- Language Understanding -->
+  <g transform="translate(325, 80)">
+    <rect width="250" height="140" rx="10" ry="10" fill="#f8d7da" stroke="#721c24" stroke-width="2"/>
+    <text x="125" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#491217" font-weight="bold">Language Understanding</text>
+    
+    <!-- NLU Components -->
+    <rect x="20" y="40" width="210" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="125" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Intent Recognition</text>
+    
+    <rect x="20" y="70" width="210" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="125" y="88" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Entity Extraction</text>
+    
+    <rect x="20" y="100" width="210" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="125" y="118" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Action Decomposition</text>
+    
+    <rect x="20" y="130" width="210" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="125" y="148" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Context Analysis</text>
+  </g>
+
+  <!-- Task Planning -->
+  <g transform="translate(650, 80)">
+    <rect width="200" height="140" rx="10" ry="10" fill="#d4edda" stroke="#155724" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#0b2e13" font-weight="bold">Task Planning</text>
+    
+    <!-- Planning Components -->
+    <rect x="10" y="40" width="180" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="100" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Path Planning</text>
+    
+    <rect x="10" y="70" width="180" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="100" y="88" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Action Sequencing</text>
+    
+    <rect x="10" y="100" width="180" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="100" y="118" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Constraint Handling</text>
+    
+    <rect x="10" y="130" width="180" height="25" fill="#c3e6cb" stroke="#155724" stroke-width="1"/>
+    <text x="100" y="148" font-family="Arial" font-size="12" text-anchor="middle" fill="#0b2e13">Fallback Planning</text>
+  </g>
+
+  <!-- ROS Action Mapping -->
+  <g transform="translate(50, 240)">
+    <rect width="200" height="140" rx="10" ry="10" fill="#fff3cd" stroke="#856404" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#533f03" font-weight="bold">ROS Action Mapping</text>
+    
+    <!-- Action Mapping Components -->
+    <rect x="10" y="40" width="180" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Navigation Action</text>
+    
+    <rect x="10" y="70" width="180" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="88" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Manipulation Action</text>
+    
+    <rect x="10" y="100" width="180" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="118" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Sensor Action</text>
+    
+    <rect x="10" y="130" width="180" height="25" fill="#ffeaa7" stroke="#856404" stroke-width="1"/>
+    <text x="100" y="148" font-family="Arial" font-size="12" text-anchor="middle" fill="#533f03">Communication Action</text>
+  </g>
+
+  <!-- Execution Layer -->
+  <g transform="translate(325, 240)">
+    <rect width="250" height="140" rx="10" ry="10" fill="#e2e3e5" stroke="#383d41" stroke-width="2"/>
+    <text x="125" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#212529" font-weight="bold">Execution Layer</text>
+    
+    <!-- Execution Components -->
+    <rect x="20" y="40" width="210" height="25" fill="#ced4da" stroke="#383d41" stroke-width="1"/>
+    <text x="125" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Action Server</text>
+    
+    <rect x="20" y="70" width="210" height="25" fill="#ced4da" stroke="#383d41" stroke-width="1"/>
+    <text x="125" y="88" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Behavior Tree</text>
+    
+    <rect x="20" y="100" width="210" height="25" fill="#ced4da" stroke="#383d41" stroke-width="1"/>
+    <text x="125" y="118" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Finite State Machine</text>
+    
+    <rect x="20" y="130" width="210" height="25" fill="#ced4da" stroke="#383d41" stroke-width="1"/>
+    <text x="125" y="148" font-family="Arial" font-size="12" text-anchor="middle" fill="#212529">Monitoring &amp; Logging</text>
+  </g>
+
+  <!-- Robot Hardware -->
+  <g transform="translate(650, 240)">
+    <rect width="200" height="140" rx="10" ry="10" fill="#d1ecf1" stroke="#0c5460" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#062c33" font-weight="bold">Robot Hardware</text>
+    
+    <!-- Hardware Components -->
+    <rect x="10" y="40" width="180" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Navigation Stack</text>
+    
+    <rect x="10" y="70" width="180" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="88" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Manipulation Stack</text>
+    
+    <rect x="10" y="100" width="180" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="118" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Sensor Drivers</text>
+    
+    <rect x="10" y="130" width="180" height="25" fill="#a3d4d9" stroke="#0c5460" stroke-width="1"/>
+    <text x="100" y="148" font-family="Arial" font-size="12" text-anchor="middle" fill="#062c33">Actuator Controllers</text>
+  </g>
+
+  <!-- Feedback & Monitoring -->
+  <g transform="translate(200, 420)">
+    <rect width="500" height="120" rx="10" ry="10" fill="#f8d7da" stroke="#721c24" stroke-width="2"/>
+    <text x="250" y="25" font-family="Arial" font-size="14" text-anchor="middle" fill="#491217" font-weight="bold">Feedback &amp; Monitoring</text>
+    
+    <!-- Feedback Components -->
+    <rect x="20" y="40" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="90" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Success/Failure</text>
+    
+    <rect x="180" y="40" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="250" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Progress Tracking</text>
+    
+    <rect x="340" y="40" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="410" y="58" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Safety Checks</text>
+    
+    <rect x="20" y="80" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="90" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">State Monitoring</text>
+    
+    <rect x="180" y="80" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="250" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Error Handling</text>
+    
+    <rect x="340" y="80" width="140" height="25" fill="#f1b0b7" stroke="#721c24" stroke-width="1"/>
+    <text x="410" y="98" font-family="Arial" font-size="12" text-anchor="middle" fill="#491217">Adaptive Planning</text>
+  </g>
+
+  <!-- Arrows and Flow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#495057" />
+    </marker>
+  </defs>
+
+  <!-- Top Row -->
+  <line x1="250" y1="150" x2="325" y2="150" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="270" y="135" font-family="Arial" font-size="12" fill="#495057">Parsed Command</text>
+
+  <line x1="575" y1="150" x2="650" y2="150" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="590" y="135" font-family="Arial" font-size="12" fill="#495057">Planned Actions</text>
+
+  <!-- Middle Row -->
+  <line x1="250" y1="310" x2="325" y2="310" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="270" y="295" font-family="Arial" font-size="12" fill="#495057">Action Commands</text>
+
+  <line x1="575" y1="310" x2="650" y2="310" stroke="#495057" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="590" y="295" font-family="Arial" font-size="12" fill="#495057">Hardware Control</text>
+
+  <!-- Vertical Connections -->
+  <line x1="150" y1="240" x2="150" y2="200" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="160" y="220" font-family="Arial" font-size="11" fill="#6c757d">Action Mapping</text>
+
+  <line x1="450" y1="240" x2="450" y2="200" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="460" y="220" font-family="Arial" font-size="11" fill="#6c757d">Execution Plan</text>
+
+  <line x1="750" y1="240" x2="750" y2="200" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="760" y="220" font-family="Arial" font-size="11" fill="#6c757d">Hardware Control</text>
+
+  <!-- Feedback Connections -->
+  <line x1="150" y1="380" x2="150" y2="420" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="160" y="400" font-family="Arial" font-size="11" fill="#6c757d">Status</text>
+
+  <line x1="450" y1="380" x2="450" y2="420" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="460" y="400" font-family="Arial" font-size="11" fill="#6c757d">Status</text>
+
+  <line x1="750" y1="380" x2="750" y2="420" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+  <text x="760" y="400" font-family="Arial" font-size="11" fill="#6c757d">Status</text>
+
+  <!-- Legend -->
+  <rect x="20" y="550" width="860" height="35" fill="#fff" stroke="#dee2e6"/>
+  <text x="40" y="570" font-family="Arial" font-size="11" fill="#495057" font-weight="bold">Cognitive Planning Process:</text>
+  <text x="220" y="570" font-family="Arial" font-size="10" fill="#495057">Natural language → Understanding → Planning → ROS Actions → Execution → Feedback</text>
+</svg>
