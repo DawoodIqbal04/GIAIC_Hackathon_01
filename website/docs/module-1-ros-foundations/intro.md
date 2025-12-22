@@ -24,6 +24,8 @@ related:
 
 Welcome to Module 1 of the Physical AI and Humanoid Robotics book. This module provides the foundational knowledge you need to understand robotic control systems using ROS 2 (Robot Operating System 2).
 
+![ROS 2 Architecture](/img/ros2-architecture-diagram.svg)
+
 ## Overview
 
 In this module, you will explore the core concepts of ROS 2, which serves as the middleware that enables communication between different components of a robotic system. Understanding ROS 2 is fundamental to building effective robotic applications, especially for humanoid robots that require complex coordination between multiple subsystems.

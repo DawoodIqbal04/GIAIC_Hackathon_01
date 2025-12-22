@@ -41,6 +41,8 @@ We'll cover the architectural patterns, implementation strategies, and best prac
 
 ## AI-Agent to ROS Integration Patterns
 
+![Python AI Agents Bridged to ROS Controllers](/img/python-ros-bridge-diagram.svg)
+
 When connecting AI agents to robotic systems, several architectural patterns emerge based on the nature of the interaction:
 
 ### 1. Command-and-Control Pattern
@@ -882,6 +884,150 @@ if __name__ == '__main__':
     main()
 ```
 
+### Example: Advanced AI Integration with Reinforcement Learning
+
+Here's an example of how to integrate a reinforcement learning agent with ROS 2:
+
+```python
+import rclpy
+from rclpy.node import Node
+import numpy as np
+from geometry_msgs.msg import Twist, Vector3
+from sensor_msgs.msg import LaserScan
+from std_msgs.msg import Float32
+import torch
+import torch.nn as nn
+
+class RLDemoNode(Node):
+    def __init__(self):
+        super().__init__('rl_demo_node')
+
+        # Publishers and subscribers
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
+        self.scan_sub = self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
+        self.reward_pub = self.create_publisher(Float32, '/rl_reward', 10)
+
+        # RL components
+        self.q_network = self.create_simple_q_network()
+        self.latest_scan = None
+        self.previous_distance = 0
+
+        # RL parameters
+        self.learning_rate = 0.001
+        self.discount_factor = 0.95
+        self.epsilon = 0.1  # Exploration rate
+
+        # Timer for RL decisions
+        self.rl_timer = self.create_timer(0.2, self.rl_decision_callback)
+
+        self.get_logger().info('RL Demo Node initialized')
+
+    def create_simple_q_network(self):
+        """Create a simple neural network for Q-learning"""
+        class QNetwork(nn.Module):
+            def __init__(self):
+                super(QNetwork, self).__init__()
+                self.fc1 = nn.Linear(10, 64)  # 10 laser readings as input
+                self.fc2 = nn.Linear(64, 32)
+                self.fc3 = nn.Linear(32, 4)  # 4 possible actions
+
+            def forward(self, x):
+                x = torch.relu(self.fc1(x))
+                x = torch.relu(self.fc2(x))
+                x = self.fc3(x)
+                return x
+
+        return QNetwork()
+
+    def scan_callback(self, msg):
+        """Process laser scan data"""
+        # Take 10 equidistant readings from the front 180 degrees
+        step = len(msg.ranges) // 10
+        front_readings = [msg.ranges[i] for i in range(0, len(msg.ranges), step) if i < len(msg.ranges)]
+        front_readings = [min(d, 10.0) for d in front_readings]  # Cap at 10m
+
+        self.latest_scan = np.array(front_readings, dtype=np.float32)
+
+    def rl_decision_callback(self):
+        """Make RL-based navigation decision"""
+        if self.latest_scan is not None:
+            # Convert to tensor for neural network
+            state_tensor = torch.FloatTensor(self.latest_scan)
+
+            # Epsilon-greedy action selection
+            if np.random.random() < self.epsilon:
+                # Explore: random action
+                action = np.random.choice(4)
+            else:
+                # Exploit: best action according to network
+                with torch.no_grad():
+                    q_values = self.q_network(state_tensor)
+                    action = torch.argmax(q_values).item()
+
+            # Convert action to velocity command
+            twist = Twist()
+            if action == 0:  # Move forward
+                twist.linear.x = 0.3
+                twist.angular.z = 0.0
+            elif action == 1:  # Turn left
+                twist.linear.x = 0.1
+                twist.angular.z = 0.5
+            elif action == 2:  # Turn right
+                twist.linear.x = 0.1
+                twist.angular.z = -0.5
+            else:  # Stop
+                twist.linear.x = 0.0
+                twist.angular.z = 0.0
+
+            # Calculate reward based on distance to obstacles
+            min_distance = min(self.latest_scan) if len(self.latest_scan) > 0 else 0
+            reward = self.calculate_reward(min_distance)
+
+            # Publish reward for monitoring
+            reward_msg = Float32()
+            reward_msg.data = reward
+            self.reward_pub.publish(reward_msg)
+
+            # Publish velocity command
+            self.cmd_vel_pub.publish(twist)
+
+            # Update previous distance for next reward calculation
+            self.previous_distance = min_distance
+
+    def calculate_reward(self, current_distance):
+        """Calculate reward based on distance to obstacles"""
+        # Reward for moving away from obstacles
+        distance_reward = max(0, current_distance - self.previous_distance) * 10
+
+        # Penalty for being too close to obstacles
+        proximity_penalty = 0
+        if current_distance < 0.5:
+            proximity_penalty = -10
+        elif current_distance < 1.0:
+            proximity_penalty = -5
+
+        # Small reward for maintaining safe distance
+        safety_reward = 1 if current_distance > 1.0 else 0
+
+        total_reward = distance_reward + proximity_penalty + safety_reward
+        return total_reward
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = RLDemoNode()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info('Shutting down RL Demo Node')
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 ## Best Practices for AI-ROS Integration
 
 ### 1. Message Optimization
@@ -911,6 +1057,12 @@ if __name__ == '__main__':
 2. **Architecture Design**: Design an AI-ROS bridge architecture for a humanoid robot that can handle both real-time control (balance, walking) and high-level decision making (task planning, natural language understanding). Consider the different timing requirements and communication patterns needed.
 
 3. **Performance Analysis**: Implement two versions of an AI-ROS bridge - one using synchronous processing and another using threaded processing. Compare their performance in terms of latency and throughput for a simple navigation task.
+
+4. **Practical Implementation**: Create a Python-based AI agent that uses OpenAI's API to interpret natural language commands and convert them to ROS 2 movement commands for a humanoid robot. The agent should handle commands like "walk forward", "turn left", "raise your left arm", etc.
+
+5. **Safety and Fallback Exercise**: Enhance the AI-ROS bridge with safety mechanisms that monitor IMU data to detect when the robot is losing balance. If dangerous conditions are detected, the system should switch from AI control to a safe recovery behavior.
+
+6. **Real-time Performance Task**: Implement an AI-ROS bridge that processes sensor data at 50 Hz while maintaining communication with ROS 2 topics and services. Use threading or asyncio to ensure that the AI processing doesn't block ROS communication.
 
 ## Summary
 

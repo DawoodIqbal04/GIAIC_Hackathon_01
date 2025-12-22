@@ -41,6 +41,8 @@ The Unified Robot Description Format (URDF) is a fundamental component of the RO
 
 In this chapter, we'll explore how to create detailed URDF descriptions specifically tailored for humanoid robots, including proper joint definitions, collision geometries, and visualization properties. We'll also cover Xacro, an XML macro language that helps simplify complex URDF definitions.
 
+![URDF - Unified Robot Description Format](/img/urdf-diagram.svg)
+
 ## URDF Fundamentals
 
 URDF (Unified Robot Description Format) is an XML-based format used to describe robots in ROS. It defines the physical structure of a robot including:
@@ -1222,6 +1224,14 @@ Here's a complete example of a simplified humanoid robot using Xacro:
 2. **Kinematic Chain Analysis**: For the humanoid model you created, analyze the kinematic chains for reaching and walking. Identify which joints need to be coordinated for specific movements.
 
 3. **Xacro Optimization**: Take an existing complex URDF file and refactor it using Xacro macros to make it more maintainable and readable.
+
+4. **Practical URDF Exercise**: Create a complete URDF model of an Atlas or similar humanoid robot with at least 28 degrees of freedom. Include realistic dimensions, masses, and inertial properties based on published specifications.
+
+5. **Gazebo Simulation**: Integrate your humanoid URDF with Gazebo physics simulation by adding appropriate material properties, friction coefficients, and transmission elements for joint control.
+
+6. **Validation and Visualization**: Validate your URDF model using ROS tools like `check_urdf` and visualize it in RViz. Ensure there are no errors in the kinematic chain and that all joints move as expected.
+
+7. **Advanced URDF Features**: Enhance your humanoid URDF with transmission elements for simulated joint control, joint limits based on human-like ranges of motion, and realistic inertial properties calculated from geometric approximations.
 
 ## Summary
 

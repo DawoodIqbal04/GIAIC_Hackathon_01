@@ -54,6 +54,8 @@ Robotic middleware must handle several unique challenges:
 
 ROS 2 implements a distributed system architecture based on the Data Distribution Service (DDS) standard. This architecture provides several key advantages over its predecessor, ROS 1.
 
+![ROS 2 Communication Patterns](/img/ros2-communication-patterns.svg)
+
 ### Core Components
 
 The ROS 2 architecture consists of several layers:
@@ -134,6 +136,104 @@ Consider a humanoid robot with the following subsystems:
 
 These subsystems communicate through ROS 2 middleware, allowing for modular development and easy replacement of individual components.
 
+### Example: Simple ROS 2 Publisher Node
+
+Here's a practical example of a ROS 2 publisher node that could be used for sensor data:
+
+```python
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+from std_msgs.msg import Header
+
+class SensorPublisherNode(Node):
+    def __init__(self):
+        super().__init__('sensor_publisher')
+
+        # Create publisher for joint states
+        self.publisher = self.create_publisher(JointState, 'joint_states', 10)
+
+        # Create timer to publish data at 10Hz
+        self.timer = self.create_timer(0.1, self.publish_joint_states)
+
+        # Initialize joint names and positions
+        self.joint_names = ['hip_joint', 'knee_joint', 'ankle_joint']
+        self.joint_positions = [0.0, 0.0, 0.0]
+
+        self.get_logger().info('Sensor Publisher Node initialized')
+
+    def publish_joint_states(self):
+        msg = JointState()
+        msg.header = Header()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.name = self.joint_names
+        msg.position = self.joint_positions
+
+        self.publisher.publish(msg)
+        self.get_logger().info(f'Published joint states: {self.joint_positions}')
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = SensorPublisherNode()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info('Shutting down sensor publisher node')
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+### Example: Simple ROS 2 Subscriber Node
+
+Here's a corresponding subscriber node that processes the sensor data:
+
+```python
+import rclpy
+from rclpy.node import Node
+from sensor_msgs.msg import JointState
+
+class JointStateSubscriber(Node):
+    def __init__(self):
+        super().__init__('joint_state_subscriber')
+
+        # Create subscriber for joint states
+        self.subscription = self.create_subscription(
+            JointState,
+            'joint_states',
+            self.joint_state_callback,
+            10
+        )
+        self.subscription  # Prevent unused variable warning
+        self.get_logger().info('Joint State Subscriber initialized')
+
+    def joint_state_callback(self, msg):
+        self.get_logger().info(f'Received joint states with {len(msg.name)} joints')
+
+        for i, name in enumerate(msg.name):
+            position = msg.position[i] if i < len(msg.position) else 0.0
+            self.get_logger().info(f'  {name}: {position:.3f} rad')
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = JointStateSubscriber()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info('Shutting down joint state subscriber')
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 ## Exercises
 
 1. **Conceptual Understanding**: Explain the difference between ROS 1's centralized master architecture and ROS 2's DDS-based distributed architecture.
@@ -141,6 +241,10 @@ These subsystems communicate through ROS 2 middleware, allowing for modular deve
 2. **Practical Exercise**: Create a simple ROS 2 node that publishes the current time at 1 Hz frequency.
 
 3. **Analysis Task**: Research and compare three different DDS implementations (Fast DDS, Cyclone DDS, RTI Connext) in terms of performance, license, and real-time capabilities.
+
+4. **Implementation Exercise**: Create a ROS 2 publisher-subscriber pair that demonstrates the middleware concept. The publisher should send sensor data (e.g., temperature readings) and the subscriber should process and log this data. Use appropriate QoS settings for your use case.
+
+5. **Architecture Design**: Design a ROS 2 system architecture for a humanoid robot with the following subsystems: perception (cameras, LiDAR), control (walking, manipulation), planning (path planning), and communication (wireless). Identify which nodes would be needed, what topics/services they would use, and what QoS settings would be appropriate for each communication channel.
 
 ## Summary
 

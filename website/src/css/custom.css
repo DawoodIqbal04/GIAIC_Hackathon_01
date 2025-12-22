@@ -28,3 +28,30 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Premium serif font for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Literata', 'Georgia', 'Times New Roman', 'Times', serif;
+  font-weight: 700;
+}
+
+/* Specific heading styles */
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 700;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+/* Ensure code blocks maintain monospace font */
+code {
+  font-family: var(--ifm-font-family-monospace);
+}

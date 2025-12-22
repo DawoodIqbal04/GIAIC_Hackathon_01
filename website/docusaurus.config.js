@@ -82,6 +82,13 @@ const config = {
       colorMode: {
         respectPrefersColorScheme: true,
       },
+      stylesheets: [
+        {
+          href: 'https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap',
+          type: 'text/css',
+          rel: 'stylesheet',
+        },
+      ],
       navbar: {
         title: 'Physical AI and Humanoid Robotics',
         logo: {

@@ -1,0 +1,60 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f5f5f5"/>
+
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">ROS 2 Communication Patterns</text>
+
+  <!-- Publisher Node -->
+  <rect x="80" y="100" width="120" height="60" rx="10" ry="10" fill="#438aa7" stroke="#2c5f77" stroke-width="2"/>
+  <text x="140" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Publisher</text>
+
+  <!-- Subscriber Node -->
+  <rect x="400" y="100" width="120" height="60" rx="10" ry="10" fill="#a75043" stroke="#77382c" stroke-width="2"/>
+  <text x="460" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Subscriber</text>
+
+  <!-- Topic Arrow -->
+  <line x1="200" y1="130" x2="400" y2="130" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="300" y="120" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Topic</text>
+
+  <!-- Service Client -->
+  <rect x="80" y="220" width="120" height="60" rx="10" ry="10" fill="#438aa7" stroke="#2c5f77" stroke-width="2"/>
+  <text x="140" y="255" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Client</text>
+
+  <!-- Service Server -->
+  <rect x="400" y="220" width="120" height="60" rx="10" ry="10" fill="#a75043" stroke="#77382c" stroke-width="2"/>
+  <text x="460" y="255" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Server</text>
+
+  <!-- Request Arrow -->
+  <line x1="200" y1="240" x2="400" y2="240" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="300" y="230" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Request</text>
+
+  <!-- Response Arrow -->
+  <line x1="400" y1="260" x2="200" y2="260" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="300" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Response</text>
+
+  <!-- Action Client -->
+  <rect x="80" y="320" width="120" height="60" rx="10" ry="10" fill="#438aa7" stroke="#2c5f77" stroke-width="2"/>
+  <text x="140" y="355" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Action Client</text>
+
+  <!-- Action Server -->
+  <rect x="400" y="320" width="120" height="60" rx="10" ry="10" fill="#a75043" stroke="#77382c" stroke-width="2"/>
+  <text x="460" y="355" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Action Server</text>
+
+  <!-- Action Comm Arrows -->
+  <line x1="200" y1="340" x2="400" y2="340" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="360" x2="200" y2="360" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="300" y="330" font-family="Arial" font-size="12" text-anchor="middle" fill="#333">Goals/Results/Feedback</text>
+
+  <!-- Arrowhead definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Legend -->
+  <rect x="20" y="60" width="560" height="25" fill="#fff" stroke="#ccc"/>
+  <text x="30" y="80" font-family="Arial" font-size="12" fill="#333">Communication: Topics (pub/sub), Services (req/rep), Actions (goal/result/feedback)</text>
+</svg>

@@ -43,6 +43,8 @@ Understanding these patterns is crucial for designing effective robotic applicat
 
 A node is the fundamental building block of a ROS 2 system. It's an executable process that performs specific tasks within the robot system. Nodes can be thought of as microservices in a distributed robotic application.
 
+![ROS 2 Communication Patterns](/img/ros2-communication-patterns.svg)
+
 ### Node Architecture
 
 Each ROS 2 node typically includes:
@@ -430,6 +432,135 @@ class WalkingController(Node):
             10)
 ```
 
+### Complete Example: Service Server and Client
+
+Here's a complete example of a service for controlling a humanoid robot's joint:
+
+**Service Definition (custom_srv/srv/SetJointPosition.srv):**
+```
+# Request
+string joint_name
+float64 position
+---
+# Response
+bool success
+string message
+```
+
+**Service Server Implementation:**
+```python
+import rclpy
+from rclpy.node import Node
+from your_package.srv import SetJointPosition  # Custom service definition
+
+class JointPositionController(Node):
+    def __init__(self):
+        super().__init__('joint_position_controller')
+
+        # Create service
+        self.srv = self.create_service(
+            SetJointPosition,
+            'set_joint_position',
+            self.set_joint_position_callback
+        )
+
+        # Store current joint positions
+        self.joint_positions = {
+            'hip_joint': 0.0,
+            'knee_joint': 0.0,
+            'ankle_joint': 0.0
+        }
+
+        self.get_logger().info('Joint Position Controller initialized')
+
+    def set_joint_position_callback(self, request, response):
+        joint_name = request.joint_name
+        position = request.position
+
+        if joint_name in self.joint_positions:
+            # In a real robot, this would send commands to the hardware
+            self.joint_positions[joint_name] = position
+
+            response.success = True
+            response.message = f'Successfully set {joint_name} to {position}'
+
+            self.get_logger().info(f'Set {joint_name} to {position}')
+        else:
+            response.success = False
+            response.message = f'Joint {joint_name} not found'
+
+            self.get_logger().warn(f'Invalid joint name: {joint_name}')
+
+        return response
+
+def main(args=None):
+    rclpy.init(args=args)
+    node = JointPositionController()
+
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        node.get_logger().info('Shutting down joint position controller')
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+**Service Client Implementation:**
+```python
+import rclpy
+from rclpy.node import Node
+from your_package.srv import SetJointPosition  # Custom service definition
+
+class JointPositionClient(Node):
+    def __init__(self):
+        super().__init__('joint_position_client')
+
+        # Create client
+        self.cli = self.create_client(SetJointPosition, 'set_joint_position')
+
+        # Wait for service to be available
+        while not self.cli.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('Service not available, waiting again...')
+
+    def send_request(self, joint_name, position):
+        request = SetJointPosition.Request()
+        request.joint_name = joint_name
+        request.position = position
+
+        # Call service asynchronously
+        self.future = self.cli.call_async(request)
+        return self.future
+
+def main(args=None):
+    rclpy.init(args=args)
+    client = JointPositionClient()
+
+    # Example: Set hip joint to 0.5 radians
+    future = client.send_request('hip_joint', 0.5)
+
+    try:
+        rclpy.spin_until_future_complete(client, future)
+        response = future.result()
+
+        if response.success:
+            client.get_logger().info(f'Service call successful: {response.message}')
+        else:
+            client.get_logger().error(f'Service call failed: {response.message}')
+
+    except KeyboardInterrupt:
+        client.get_logger().info('Service call interrupted')
+    finally:
+        client.destroy_node()
+        rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 ## Best Practices for Communication Design
 
 ### 1. Message Design
@@ -459,6 +590,16 @@ class WalkingController(Node):
 2. **Design Exercise**: Design a communication architecture for a humanoid robot's perception system with nodes for camera, LiDAR, and object detection. Specify which communication patterns to use and justify your choices.
 
 3. **Analysis Task**: Compare the advantages and disadvantages of using topics vs services for controlling a humanoid robot's walking pattern. Consider factors like real-time performance, error handling, and system complexity.
+
+4. **Practical Exercise**: Implement a service server that calculates the forward kinematics for a simple 2-DOF arm and a client that requests the end-effector position for specific joint angles. Test the service with various inputs and verify the results.
+
+5. **Architecture Task**: Create a complete ROS 2 package that implements a humanoid robot's joint controller. The package should include:
+   - A publisher for joint state commands
+   - A service for setting joint positions immediately
+   - An action server for executing complex joint trajectories
+   - A test script that demonstrates all three communication patterns
+
+6. **Performance Analysis**: Implement two versions of a data publisher - one with reliable QoS settings and one with best-effort settings. Compare their performance characteristics in terms of latency and throughput when publishing sensor data.
 
 ## Summary
 
