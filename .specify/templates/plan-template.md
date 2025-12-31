@@ -31,15 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-Based on the Physical AI and Humanoid Robotics Book Constitution:
-- Technical accuracy must be grounded in authoritative sources and research
+Based on the Embedded Retrieval-Augmented Generation (RAG) Chatbot Constitution:
+- All chatbot answers must be derived strictly from indexed book content or user-selected text
+- Retrieval process precedes response generation with no free-form answering
+- Full traceability maintained between user queries, retrieved sources, and final answers
 - All content follows spec-driven development methodology using Spec-Kit Plus
-- Content must be designed for technical audiences with appropriate depth
 - Traceability maintained between book content, specifications, and chatbot responses
 - Modularity achieved while keeping components synchronized
-- Documentation-first approach followed for all components
-- All factual claims must be verifiable against authoritative sources
-- Chatbot responses must be grounded in indexed book content
+- All responses must be grounded in indexed book content or user-selected text
+- No hallucinated facts or external knowledge beyond the book corpus
+- Responses must cite retrieved sections or chapter references
 
 ## Project Structure
 

@@ -25,7 +25,6 @@ This document decomposes the Docusaurus book creation process into clear, action
 
 - Module content creation can proceed in parallel after platform setup (Modules 2-4 after Module 1 foundation)
 - Technical diagrams and code examples can be created in parallel with main content
-- RAG integration can proceed in parallel with content creation (backend development)
 
 ---
 
