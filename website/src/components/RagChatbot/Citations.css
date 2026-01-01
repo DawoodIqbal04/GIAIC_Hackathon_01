@@ -1,0 +1,42 @@
+.citations-container {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #d1d5db;
+  font-size: 0.875rem;
+}
+
+.citations-container h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.citations-list {
+  margin: 0;
+  padding-left: 1rem;
+  list-style-type: none;
+}
+
+.citation-item {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.citation-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.citation-reference {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.citation-snippet {
+  font-style: italic;
+  color: #6b7280;
+  line-height: 1.4;
+}
